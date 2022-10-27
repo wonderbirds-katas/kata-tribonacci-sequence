@@ -1,6 +1,7 @@
 (ns kata-tribonacci-sequence.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn trib []
+      (lazy-seq (concat [0 0 0] (trib))))
+
+(defn tribonacci [_ n]
+       (take n (trib)))

@@ -2,6 +2,13 @@
   (:require [clojure.test :refer :all]
             [kata-tribonacci-sequence.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(defn tester [sequence n expected]
+  (testing (str "(tribonacci " sequence " " n ")")
+    (is (= (tribonacci sequence n) expected))))
+
+(deftest tribonacci-test
+  (tester [0 0 0] 0 '())
+  (tester [0 0 0] 1 '(0))
+  (tester [0 0 0] 4 '(0 0 0 0))
+  ;(tester [1 0 0] 3 '(1 0 0))
+  )
