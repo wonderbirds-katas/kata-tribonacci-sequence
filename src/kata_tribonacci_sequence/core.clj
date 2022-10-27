@@ -1,7 +1,7 @@
 (ns kata-tribonacci-sequence.core)
 
-(defn trib []
-      (lazy-seq (concat [0 0 0] (trib))))
+(defn trib [signature]
+      (lazy-seq (concat signature (trib signature))))
 
-(defn tribonacci [_ n]
-       (take n (trib)))
+(defn tribonacci [signature n]
+       (take n (trib signature)))
